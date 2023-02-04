@@ -55,7 +55,6 @@ body {
 .header-content-links {
   display: flex;
   align-items: center;
-  flex-grow: 1;
 }
 
 .header-content-links__link {
