@@ -1,0 +1,334 @@
+html {
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1500px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 1140px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 935px) {
+  html {
+    font-size: 4px;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: illegalEdding;
+  src: url('./fonts/illegaledding.ttf');
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.header-content {
+  width: 80%;
+  padding: 0 0.75rem 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content__logo {
+  width: 8.33rem;
+  height: 8.33rem;
+}
+
+.header-content-links {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.header-content-links__link {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: #FFFFFF;
+  margin-left: 44px;
+  text-decoration: none;
+}
+
+.header-content-links__link:first-child {
+  margin-left: 0 !important;
+}
+
+.header-content-links__link:hover {
+  text-decoration: underline #FFFFFF;
+}
+
+.header-content-links__rectangle {
+  width: 0.5rem;
+  height: 0.5rem;
+  background: rgba(255, 255, 255, 0.35);
+  transform: rotate(45deg);
+  margin-left: 6px;
+  margin-bottom: 2px;
+  display: inline-block;
+}
+
+.header-content-menu {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.6rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.header-content-menu__deskBtn {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.33rem;
+  color: #FFFFFF;
+  background-image: url('./imgs/my-desk-border.png');
+  background-size: cover;
+  padding: 1.33rem 3rem 2.33rem 2.33rem;
+  cursor: pointer;
+}
+
+.header-content-menu__checkbox {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.header-content-menu-drop {
+  display: none;
+  background-image: url('./imgs/menu-bg.png');
+  background-size: cover;
+  position: absolute;
+  width: 9.4rem;
+  top: 1.3rem;
+  left: 2.4rem;
+  padding: 2.5rem 0 2rem;
+}
+
+@media (max-width: 1500px) {
+  .header-content-menu-drop {
+    left: 2.6rem;
+  }
+}
+
+@media (max-width: 1140px) {
+  .header-content-menu-drop {
+    left: 2.8rem;
+  }
+}
+
+@media (max-width: 935px) {
+  .header-content-menu-drop {
+    left: 3rem;
+  }
+}
+
+.header-content-menu__checkbox:checked ~ .header-content-menu-drop  {
+  display: block;
+}
+
+.header-content-menu-drop-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.25rem 0.55rem 0.25rem 1rem;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  color: #FFFFFF;
+}
+
+.header-content-menu-drop-link__icon {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.header-content-menu-wallet {
+  background-image: url('./imgs/wallet-border.png');
+  background-size: cover;
+  padding: 1.6rem 2.2rem 2.2rem 2rem;
+  margin-left: -3.2rem;
+}
+
+.header-content-menu-wallet__icon {
+  width: 0.9rem;
+  height: 0.7rem;
+  display: block;
+}
+
+.game-video {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-image: url('./imgs/UFC-index-bg.png');
+  background-size: cover;
+}
+
+.game-video-content {
+  width: 80%;
+  background: rgba(3, 2, 39, 0.65);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-video-content__title {
+  font-family: 'IllegalEdding';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 4.6rem;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 50px rgba(255, 255, 255, 0.8);
+  margin-top: 144px;
+}
+
+.game-video-content-video {
+  position: relative;
+  margin-top: 1.75rem;
+  margin-bottom: 1.55rem;
+  filter: drop-shadow(0px 50px 100px rgba(255, 139, 94, 0.65));
+  width: 58%;
+}
+
+.game-video-content-video::before {
+  content: '';
+  height: 2.53rem;
+  width: 83%;
+  background-image: url(./imgs/video-img-top.png);
+  background-size: cover;
+  z-index: 2;
+  position: absolute;
+  top: 1.01%;
+  right: 0.74%;
+}
+
+.game-video-content-video::after {
+  content: '';
+  height: 2.53rem;
+  width: 83%;
+  background-image: url(./imgs/video-img-bot.png);
+  background-size: cover;
+  z-index: 2;
+  position: absolute;
+  bottom: 1.9%;
+  left: 0.63%;
+}
+
+.game-video-content-video__bg {
+  width: 100%;
+}
+
+.game-video-content-video__playBtn {
+  width: 9,45rem;
+  height: 9,45rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-video-content-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.game-video-content-buttons__button {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.08rem;
+  line-height: 0.65rem;
+  color: #FFFFFF;
+  text-shadow: 0px 0.15rem 1.04rem #FFFFFF;
+  position: relative;
+}
+
+.game-video-content-buttons__button_game {
+  background: url('./imgs/gameBorder.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8.33rem;
+  height: 2.5rem;
+}
+
+.game-video-content-buttons__button_game::before {
+  content: '';
+  height: 0.65rem;
+  width: 6.83rem;
+  background-image: url('./imgs/gameBefore.png');
+  background-size: cover;
+  z-index: 2;
+  position: absolute;
+  top: 0px;
+  right: 0.08rem;
+}
+
+.game-video-content-buttons__button_game::after {
+  content: '';
+  height: 0.65rem;
+  width: 6.83rem;
+  background-image: url('./imgs/gameAfter.png');
+  background-size: cover;
+  z-index: 2;
+  position: absolute;
+  bottom: 0px;
+  left: 0.15rem;
+}
+
+.game-video-content-buttons__button_buy {
+  background: url('./imgs/buyBorder.png');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 9.1rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  margin-left: -0.5rem;
+}
+
+.game-video-content-about {
+  margin-top: 3rem;
+  width: 82%;
+}
+
+.game-video-content-about__title {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.65rem;
+  line-height: 2.04rem;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 50px rgba(255, 255, 255, 0.8);
+  text-align: center;
+}
+
+.game-video-content-about__desc {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.54rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+}
