@@ -71,6 +71,10 @@ body {
   margin-left: 0 !important;
 }
 
+.header-content-links__link:hover {
+  text-shadow: 0 -0.3rem 1.9rem rgb(255 139 94);
+}
+
 @media (max-width: 515px) {
   .header {
     position: relative;
@@ -102,10 +106,6 @@ body {
     font-size: 2.8rem;
     line-height: 3rem;
   }
-}
-
-.header-content-links__link:hover {
-  text-decoration: underline #FFFFFF;
 }
 
 .header-content-links__rectangle {
@@ -305,6 +305,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  cursor: pointer;
 }
 
 .game-video-content-buttons {
