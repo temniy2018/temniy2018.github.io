@@ -63,12 +63,45 @@ body {
   font-size: 1.2rem;
   line-height: 1.5rem;
   color: #FFFFFF;
-  margin-left: 44px;
+  margin-left: 3.66rem;
   text-decoration: none;
 }
 
 .header-content-links__link:first-child {
   margin-left: 0 !important;
+}
+
+@media (max-width: 515px) {
+  .header {
+    position: relative;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .header-content {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
+  
+  .header-content__logo {
+    width: 8.33rem;
+    height: 8.33rem;
+  }
+  
+  .header-content-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-content-links__link {
+    margin-left: 0;
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
 }
 
 .header-content-links__link:hover {
@@ -103,6 +136,12 @@ body {
   background-size: cover;
   padding: 1.33rem 3rem 2.33rem 2.33rem;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.header-content-menu__deskBtn > span {
+  position: relative;
+  z-index: 1000;
 }
 
 .header-content-menu__checkbox {
@@ -116,6 +155,7 @@ body {
   background-image: url('./imgs/menu-bg.png');
   background-size: cover;
   position: absolute;
+  z-index: 999;
   width: 9.4rem;
   top: 1.3rem;
   left: 2.4rem;
@@ -136,7 +176,7 @@ body {
 
 @media (max-width: 935px) {
   .header-content-menu-drop {
-    left: 3rem;
+    left: 3.4rem;
   }
 }
 
@@ -172,13 +212,16 @@ body {
   width: 0.9rem;
   height: 0.7rem;
   display: block;
+  position: relative;
+  z-index: 1000;
+  cursor: pointer;
 }
 
 .game-video {
   display: flex;
   justify-content: center;
   width: 100%;
-  background-image: url('./imgs/UFC-index-bg.png');
+  background: url('./imgs/UFC-index-bg.png'), url('./imgs/UFC-index-bg-min.png'), rgba(3, 2, 39, 0.65);
   background-size: cover;
 }
 
@@ -201,45 +244,64 @@ body {
   margin-top: 144px;
 }
 
+@media (max-width: 515px) {
+  .game-video-content {
+    width: 100%;
+  }
+  
+  .game-video-content__title {
+    margin-top: 2rem;
+  }
+}
+
 .game-video-content-video {
   position: relative;
   margin-top: 1.75rem;
   margin-bottom: 1.55rem;
   filter: drop-shadow(0px 50px 100px rgba(255, 139, 94, 0.65));
   width: 58%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .game-video-content-video::before {
   content: '';
-  height: 2.53rem;
-  width: 83%;
+  height: 7%;
+  width: 84%;
   background-image: url(./imgs/video-img-top.png);
   background-size: cover;
   z-index: 2;
   position: absolute;
-  top: 1.01%;
-  right: 0.74%;
+  top: 0.84%;
+  right: 0.61%;
 }
 
 .game-video-content-video::after {
   content: '';
-  height: 2.53rem;
-  width: 83%;
+  height: 7%;
+  width: 84%;
   background-image: url(./imgs/video-img-bot.png);
   background-size: cover;
   z-index: 2;
   position: absolute;
-  bottom: 1.9%;
-  left: 0.63%;
+  bottom: 0.84%;
+  left: 0.37%;
 }
 
 .game-video-content-video__bg {
   width: 100%;
 }
 
+.game-video-content-video__bg_playing {
+  width: 95%;
+  padding-top: 1.4%;
+  padding-bottom: 1.6%;
+}
+
 .game-video-content-video__playBtn {
-  width: 9,45rem;
-  height: 9,45rem;
+  width: 9.45rem;
+  height: 9.45rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -259,6 +321,7 @@ body {
   color: #FFFFFF;
   text-shadow: 0px 0.15rem 1.04rem #FFFFFF;
   position: relative;
+  cursor: pointer;
 }
 
 .game-video-content-buttons__button_game {
@@ -267,32 +330,39 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 8.33rem;
+  width: 8.5rem;
   height: 2.5rem;
 }
 
 .game-video-content-buttons__button_game::before {
   content: '';
-  height: 0.65rem;
-  width: 6.83rem;
+  height: 25%;
+  width: 86%;
   background-image: url('./imgs/gameBefore.png');
   background-size: cover;
   z-index: 2;
   position: absolute;
-  top: 0px;
-  right: 0.08rem;
+  top: 5.2%;
+  right: 0.03%;
 }
 
 .game-video-content-buttons__button_game::after {
   content: '';
-  height: 0.65rem;
-  width: 6.83rem;
+  height: 27%;
+  width: 84%;
   background-image: url('./imgs/gameAfter.png');
   background-size: cover;
   z-index: 2;
   position: absolute;
-  bottom: 0px;
-  left: 0.15rem;
+  bottom: 3.5%;
+  left: 1%;
+}
+
+@media (max-width: 935px) {
+  .game-video-content-buttons__button_game {
+    width: 8.7rem;
+    height: 2.6rem;
+  }
 }
 
 .game-video-content-buttons__button_buy {
@@ -304,7 +374,7 @@ body {
   width: 9.1rem;
   height: 2.5rem;
   margin-top: 0.5rem;
-  margin-left: -0.5rem;
+  margin-left: -0.2rem;
 }
 
 .game-video-content-about {
