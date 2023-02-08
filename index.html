@@ -13,6 +13,10 @@
   <body>
     <div class="header">
       <div class="header-content">
+        <input type="checkbox" id="mobileMenu" class="header-content-mobileMenu__checkbox">
+        <label for="mobileMenu" class="header-content-mobileMenu">
+          <img src="./imgs/logo.png" alt="logo" class="header-content-mobileMenu__logo">
+        </label>
         <img src="./imgs/logo.png" alt="logo" class="header-content__logo">
         <div class="header-content-links">
           <a href="" class="header-content-links__link">Roadmap</a>
@@ -90,7 +94,7 @@
           <video id="trailer" class="game-video-content-video__bg" poster="./imgs/video-img.png">
             <source src="./imgs/trailer.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
           </video>
-          <img onclick="play()"  id="playTrailer" src="./imgs/button-play.png" alt="play" class="game-video-content-video__playBtn">
+          <img onclick="onClickPlayBtn()"  id="playTrailer" src="./imgs/button-play.png" alt="play" class="game-video-content-video__playBtn">
         </div>
         <div class="game-video-content-buttons">
           <span class="game-video-content-buttons__button game-video-content-buttons__button_game">

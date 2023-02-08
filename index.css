@@ -47,6 +47,22 @@ body {
   align-items: center;
 }
 
+.header-content-mobileMenu {
+  display: none;
+}
+
+.header-content-mobileMenu__checkbox {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  order: 4;
+}
+
+.header-content-mobileMenu__logo {
+  width: 10rem;
+  height: 10rem;
+}
+
 .header-content__logo {
   width: 8.33rem;
   height: 8.33rem;
@@ -65,7 +81,7 @@ body {
   color: #FFFFFF;
   margin-left: 3.66rem;
   text-decoration: none;
-  transition: all 0.6s;
+  transition: color 0.6s;
 }
 
 .header-content-links__link:first-child {
@@ -75,39 +91,6 @@ body {
 .header-content-links__link:hover {
   color: rgb(255 139 94);
   /* text-shadow: 0 -0.3rem 1.9rem rgb(255 139 94); */
-}
-
-@media (max-width: 515px) {
-  .header {
-    position: relative;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  .header-content {
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-  }
-  
-  .header-content__logo {
-    width: 8.33rem;
-    height: 8.33rem;
-  }
-  
-  .header-content-links {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .header-content-links__link {
-    margin-left: 0;
-    font-size: 2.8rem;
-    line-height: 3rem;
-  }
 }
 
 .header-content-menu {
@@ -131,17 +114,6 @@ body {
   text-decoration: none;
 }
 
-.header-content-menu__deskBtn > span {
-  position: relative;
-  z-index: 1000;
-}
-
-.header-content-menu__checkbox {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-}
-
 .header-content-menu-drop {
   display: none;
   background-image: url('./imgs/menu-bg.png');
@@ -152,6 +124,142 @@ body {
   top: 1.3rem;
   left: 2.4rem;
   padding: 2.5rem 0 2rem;
+}
+
+.header-content-menu-wallet {
+  background-image: url('./imgs/wallet-border.png');
+  background-size: cover;
+  padding: 1.6rem 2.2rem 2.2rem 2rem;
+  margin-left: -3.2rem;
+}
+
+.header-content-menu-wallet__icon {
+  width: 0.9rem;
+  height: 0.7rem;
+  display: block;
+  position: relative;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.header-content-menu__checkbox:checked ~ .header-content-menu-drop  {
+  display: block;
+}
+
+.header-content-menu-drop-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.25rem 0.55rem 0.25rem 1rem;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 0.9rem;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.header-content-menu-drop-link__icon {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+@media (max-width: 515px) {
+  .header {
+    position: relative;
+    background-color: black;
+  }
+  
+  .header-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem;
+  }
+
+  .header-content-mobileMenu {
+    display: inline-block;
+    order: 1;
+  }
+  
+  .header-content__logo {
+    display: none;
+  }
+
+  .header-content-mobileMenu__checkbox:checked ~ .header-content-links {
+    height: auto;
+    visibility: visible;
+    padding-left: 2.66rem;
+  }
+  
+  .header-content-links {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-basis: 100%;
+    order: 3;
+    height: 0;
+    visibility: hidden;
+  }
+
+  .header-content-links__link {
+    margin-left: 0;
+    font-size: 2.8rem;
+    line-height: 3rem;
+  }
+
+  .header-content-mobileMenu__checkbox:checked ~ .header-content-menu {
+    height: auto;
+    visibility: visible;
+  }
+
+  .header-content-menu {
+    visibility: hidden;
+    height: 0;
+    order: 2;
+  }
+
+  .header-content-menu__deskBtn {
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    padding: 1.66rem 3.66rem 2.7rem 3rem;
+  }
+
+  .header-content-menu-wallet {
+    padding: 2.1rem 2.9rem 2.9rem 2.6rem;
+    margin-left: -4.2rem;
+  }
+
+  .header-content-menu-wallet__icon {
+    width: 1.2rem;
+    height: 1rem;
+  }
+
+  .header-content-menu-drop {
+    width: 12rem;
+    top: 1.7rem;
+    left: 4.3rem !important;
+    padding-bottom: 1.7rem;
+  }
+
+  .header-content-menu-drop-link {
+    margin: 0.5rem 0.55rem 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+}
+
+.header-content-menu__deskBtn > span {
+  position: relative;
+  z-index: 1000;
+}
+
+.header-content-menu__checkbox {
+  visibility: hidden;
+  width: 0;
+  height: 0;
 }
 
 @media (max-width: 1500px) {
@@ -170,43 +278,6 @@ body {
   .header-content-menu-drop {
     left: 3.4rem;
   }
-}
-
-.header-content-menu__checkbox:checked ~ .header-content-menu-drop  {
-  display: block;
-}
-
-.header-content-menu-drop-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0.25rem 0.55rem 0.25rem 1rem;
-  font-family: 'Montserrat';
-  font-weight: 700;
-  font-size: 0.75rem;
-  line-height: 0.9rem;
-  color: #FFFFFF;
-}
-
-.header-content-menu-drop-link__icon {
-  width: 0.8rem;
-  height: 0.8rem;
-}
-
-.header-content-menu-wallet {
-  background-image: url('./imgs/wallet-border.png');
-  background-size: cover;
-  padding: 1.6rem 2.2rem 2.2rem 2rem;
-  margin-left: -3.2rem;
-}
-
-.header-content-menu-wallet__icon {
-  width: 0.9rem;
-  height: 0.7rem;
-  display: block;
-  position: relative;
-  z-index: 1000;
-  cursor: pointer;
 }
 
 .game-video {
@@ -233,7 +304,7 @@ body {
   line-height: 4.6rem;
   color: #FFFFFF;
   text-shadow: 0px 0px 50px rgba(255, 255, 255, 0.8);
-  margin-top: 144px;
+  margin-top: 12rem;
 }
 
 @media (max-width: 515px) {
@@ -271,7 +342,7 @@ body {
 
 .game-video-content-video::after {
   content: '';
-  height: 7%;
+  height: 7.6%;
   width: 84%;
   background-image: url(./imgs/video-img-bot.png);
   background-size: cover;
@@ -288,7 +359,7 @@ body {
 .game-video-content-video__bg_playing {
   width: 95%;
   padding-top: 1.4%;
-  padding-bottom: 1.6%;
+  padding-bottom: 1%;
 }
 
 .game-video-content-video__playBtn {
