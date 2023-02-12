@@ -60,20 +60,26 @@ body {
 
 .header-content-mobileMenu {
   display: none;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 2.5rem;
+  color: #FFFFFF;
+  order: 2;
+  cursor: pointer;
+}
+
+.header-content-mobileMenu:hover {
+  color: rgb(255 139 94);
 }
 
 .header-content-mobileMenu__checkbox {
   display: none;
   width: 0;
   height: 0;
-  -webkit-box-ordinal-group: 5;
-      -ms-flex-order: 4;
-          order: 4;
-}
-
-.header-content-mobileMenu__logo {
-  width: 10rem;
-  height: 10rem;
+  -webkit-box-ordinal-group: 6;
+    -ms-flex-order: 5;
+        order: 5;
 }
 
 .header-content__logo {
@@ -203,9 +209,7 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -216,13 +220,16 @@ body {
 
   .header-content-mobileMenu {
     display: inline-block;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+    -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+        order: 2;
+    margin-left: 7rem;
   }
   
   .header-content__logo {
-    display: none;
+    width: 10rem;
+    height: 10rem;
+    order: 1;
   }
 
   .header-content-mobileMenu__checkbox {
@@ -248,9 +255,9 @@ body {
           align-items: flex-start;
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-    -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+    -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
     height: 0;
     visibility: hidden;
   }
@@ -263,8 +270,8 @@ body {
 
   .header-content-menu {
     -webkit-box-ordinal-group: 3;
-        -ms-flex-order: 2;
-            order: 2;
+        -ms-flex-order: 3;
+            order: 3;
   }
 
   .header-content-menu__deskBtn {
@@ -336,6 +343,7 @@ body {
   width: 100%;
   background: url('./imgs/UFC-index-bg.png'), url('./imgs/UFC-index-bg-min.png'), rgba(3, 2, 39, 0.65);
   background-size: cover;
+  min-height: 100vh;
 }
 
 .game-video-content {
@@ -365,6 +373,10 @@ body {
 }
 
 @media (max-width: 515px) {
+  .game-video {
+    min-height: calc(100vh - 70px);
+  }
+
   .game-video-content {
     width: 100%;
   }
